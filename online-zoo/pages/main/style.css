@@ -103,7 +103,7 @@ body {
   transform: translateY(2px);
 }
 .header__logo_span {
-  content: url("/assets/images/bamboo.svg");
+  content: url("../../assets/images/bamboo.svg");
   position: absolute;
   bottom: 0;
   left: 0;
@@ -618,7 +618,7 @@ body {
   transform: translateY(2px);
 }
 .footer__logo_span {
-  content: url("/assets/images/bamboo.svg");
+  content: url("../../assets/images/bamboo.svg");
   position: absolute;
   bottom: 0;
   left: 0;
