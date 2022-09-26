@@ -106,3 +106,6 @@ dist
 #SCSS, SASS
 *.scss
 *.css.map
+
+#git
+.gitignore
