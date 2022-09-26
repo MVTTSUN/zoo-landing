@@ -94,7 +94,7 @@ body {
   transform: translateY(2px);
 }
 .header__logo_span {
-  content: url("/assets/images/bamboo.svg");
+  content: url("../../assets/images/bamboo.svg");
   position: absolute;
   bottom: 0;
   left: 0;
@@ -285,7 +285,7 @@ body {
   margin-right: -5px;
   width: 10px;
   height: 20px;
-  background: url("/assets/images/dollar.svg");
+  background: url("../../assets/images/dollar.svg");
 }
 .donate__grid-price {
   margin-bottom: 98px;
@@ -314,14 +314,14 @@ body {
   color: #FE9013;
 }
 .donate__grid-price-el:hover .donate__dollar {
-  background: url("/assets/images/dolar-orange.svg") no-repeat;
+  background: url("../../assets/images/dolar-orange.svg") no-repeat;
 }
 .donate__grid-price-el:hover .donate__circle::before {
   content: "";
   position: absolute;
   width: 40px;
   height: 40px;
-  background: url("/assets/images/roller_icon.svg") no-repeat;
+  background: url("../../assets/images/roller_icon.svg") no-repeat;
   transform: translate(-15px, -15px);
 }
 .donate__form-input {
@@ -337,7 +337,7 @@ body {
   font-size: 16px;
   line-height: 140%;
   color: #000;
-  background-image: url(/assets/images/dollar-gray.svg);
+  background-image: url(../../assets/images/dollar-gray.svg);
   background-repeat: no-repeat;
   background-position: 95%;
   width: 268px;
@@ -390,16 +390,16 @@ body {
 }
 .donate__form-input:active {
   border: 1px solid #4B9200;
-  background-image: url(/assets/images/dollar-green.svg);
+  background-image: url(../../assets/images/dollar-green.svg);
 }
 .donate__form-input:hover {
   border: 1px solid #4B9200;
-  background-image: url(/assets/images/dollar-green.svg);
+  background-image: url(../../assets/images/dollar-green.svg);
 }
 .donate__form-input:focus {
   border: 1px solid #4B9200;
   outline: none;
-  background-image: url(/assets/images/dollar-green.svg);
+  background-image: url(../../assets/images/dollar-green.svg);
 }
 .donate__rad-box {
   text-align: center;
@@ -510,7 +510,7 @@ body {
   transform: translateY(2px);
 }
 .footer__logo_span {
-  content: url("/assets/images/bamboo.svg");
+  content: url("../../assets/images/bamboo.svg");
   position: absolute;
   bottom: 0;
   left: 0;
