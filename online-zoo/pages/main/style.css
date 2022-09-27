@@ -244,10 +244,10 @@ body {
   height: 275px;
 }
 .main-info .grid-cards__btn {
+  padding: 16px 0;
   display: block;
   margin: 0 auto;
   width: 298px;
-  height: 54px;
   background: #FE9013;
   border-radius: 25px;
   font-weight: 500;
