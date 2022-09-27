@@ -84,7 +84,7 @@ body {
   border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
-.header__logo p {
+.header__logo h1 {
   margin: 0;
   font-weight: 400;
   font-size: 19.0145px;
@@ -92,6 +92,18 @@ body {
   text-align: center;
   color: #FFFFFF;
   transform: translateY(2px);
+}
+.header__logo h1:hover {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.header__logo h1:active {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 .header__logo_span {
   content: url("../../assets/images/bamboo.svg");
@@ -509,6 +521,18 @@ body {
   color: #FFFFFF;
   transform: translateY(2px);
 }
+.footer__logo p:hover {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.footer__logo p:active {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
 .footer__logo_span {
   content: url("../../assets/images/bamboo.svg");
   position: absolute;
@@ -580,10 +604,10 @@ body {
   border: 1px solid #4B9200;
 }
 .footer__btn {
+  padding: 16px 0;
   margin-bottom: 49px;
   display: block;
   width: 298px;
-  height: 54px;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
@@ -696,4 +720,12 @@ body {
 .footer__info-2:hover {
   border-bottom: 1px #4B9200 solid;
   color: #4B9200;
+}
+
+.active-pages {
+  cursor: auto;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }/*# sourceMappingURL=style.css.map */
