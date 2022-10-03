@@ -60,17 +60,13 @@ body {
   color: #FFEE2E;
 }
 
-.width {
-  max-width: 1600px;
-  margin: auto;
-}
-
 .container {
   margin: 0 220px;
 }
 
 .header {
-  min-height: 780px;
+  position: relative;
+  max-height: 780px;
   margin-bottom: 140px;
 }
 .header__color-black {
@@ -178,11 +174,14 @@ body {
   color: #FFFFFF;
 }
 .header__visit-card {
-  position: absolute;
-  top: 0;
+  min-height: 700px;
+  overflow: hidden;
 }
 .header__visit-card__img {
-  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
 }
 .header__visit-card__circle {
   position: absolute;
@@ -306,6 +305,7 @@ body {
   color: #333B41;
 }
 .info__strong-description {
+  margin: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -318,6 +318,7 @@ body {
   grid-template-columns: repeat(3, minmax(210px, 1fr));
   gap: 20px 30px;
   margin-bottom: 80px;
+  justify-items: center;
 }
 .grid-cards__arrow-left {
   cursor: pointer;
@@ -359,9 +360,12 @@ body {
   transform: translateY(60px);
 }
 .grid-cards__img-main {
+  max-height: 366px;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   border-radius: 3px 3px 0 0;
-  max-width: 100%;
+  width: 100%;
   transition: transform 0.3s ease-out;
 }
 .grid-cards__flex {
@@ -519,13 +523,14 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0 30px;
+  justify-items: center;
 }
 .testimonials__li {
   padding: 15px 15px 19px;
   margin-bottom: 21px;
   position: relative;
-  width: 268px;
-  height: 391px;
+  max-width: 268px;
+  min-height: 391px;
   background: #F1F3F2;
   border-radius: 20px;
 }
@@ -814,6 +819,7 @@ body {
   margin-right: 59px;
 }
 .footer__info {
+  display: block;
   position: absolute;
   right: 220px;
   bottom: 50px;
@@ -859,4 +865,231 @@ body {
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+}
+
+@media (max-width: 1500px) {
+  .container {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
+  .header {
+    max-height: 584px;
+  }
+  .header__heading {
+    font-size: 85px;
+    left: calc(50% - 200.125px + 214.12px);
+    top: 122.8px;
+  }
+  .header__visit-card__circle {
+    width: 367px;
+    height: 367px;
+    left: calc(50% - 183.5px + 139.5px);
+    top: 69px;
+  }
+  .header__visit-card__btn {
+    top: 523px;
+    left: calc(50% - 149px + 214px);
+    top: 483px;
+  }
+  .header__visit-card__img {
+    -o-object-fit: none;
+       object-fit: none;
+  }
+  .info {
+    max-height: none;
+  }
+  .info__back-1 {
+    display: none;
+  }
+  .info__back-2 {
+    height: 202px !important;
+    background: url("../../assets/images/palm_foto-1000px.png") no-repeat !important;
+  }
+  .info__back-3 {
+    width: 241px !important;
+    height: 180px !important;
+    background: url("../../assets/images/strelitzia 1-1000px.png") no-repeat !important;
+  }
+  .grid-cards__ul {
+    gap: 92px 30px;
+  }
+  .grid-cards__arrow-right {
+    right: auto;
+    transform: translateX(101px);
+  }
+  .grid-cards__arrow-left {
+    left: auto;
+    transform: translateX(-101px);
+  }
+  .testimonials__avatar {
+    width: 37px;
+    height: 37px;
+  }
+  .footer__nav {
+    max-width: 622px;
+  }
+  .footer__top-right {
+    right: 60px;
+  }
+  .footer__info {
+    right: 60px;
+  }
+  .footer__nav-li:not(:last-child) {
+    margin-right: 48px;
+  }
+}
+@media (max-width: 1100px) {
+  .header {
+    max-height: 584px;
+  }
+  .header__visit-card__circle {
+    left: calc(50% - 183.5px + 139.5px);
+  }
+  .header__visit-card__btn {
+    left: calc(50% - 149px + 214px);
+    top: 483px;
+  }
+  .header__heading {
+    width: 400px;
+    height: 320px;
+    left: calc(50% - 200.125px + 214.12px);
+    top: 122.8px;
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .header {
+    margin-bottom: 100px;
+  }
+  .main-info {
+    padding-bottom: 140px;
+  }
+  .info {
+    position: relative;
+    margin-bottom: 142px;
+  }
+  .info__description-box {
+    max-width: 454px;
+  }
+  .info__img {
+    max-height: 408px;
+    align-self: center;
+  }
+  .pay-help {
+    padding: 30px 0 50px;
+  }
+  .pay-help__heading {
+    margin-bottom: 20px;
+  }
+  .pay-help__box {
+    padding: 30px 40px 50px;
+  }
+  .pay-help__desc1 {
+    margin-bottom: 20px;
+  }
+  .pay-help__desc2 {
+    max-width: 815px;
+  }
+  .pay-help__desc3 {
+    max-width: 823px;
+    margin-bottom: 40px;
+  }
+  .pay-help__ul {
+    transform: translateX(0);
+    max-height: 314px;
+  }
+  .testimonials {
+    padding: 100px 0 140px;
+  }
+  .testimonials__back {
+    background: url("../../assets/images/leav_foto-1000.png");
+    width: 196px;
+    height: 241px;
+  }
+  .testimonials__heading {
+    margin-bottom: 30px;
+  }
+  .testimonials__ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .testimonials__li {
+    max-width: 293px;
+  }
+  .testimonials__li:last-child {
+    display: none;
+  }
+  .testimonials__desc {
+    max-width: 259px;
+  }
+  .testimonials__scroll-bar {
+    margin-bottom: 52px;
+    max-width: 390px;
+  }
+  .testimonials__scroll-bar::after {
+    width: 75px;
+  }
+  .footer__top-right {
+    right: 30px;
+  }
+  .footer__info {
+    right: 30px;
+  }
+}
+@media (max-width: 950px) {
+  .grid-cards__ul {
+    grid-template-columns: repeat(2, minmax(210px, 1fr));
+  }
+  .grid-cards__li:nth-child(3n) {
+    display: none;
+  }
+  .footer__nav {
+    max-width: 400px;
+  }
+  .footer__link-span-text {
+    display: none;
+  }
+}
+.blur {
+  z-index: 2;
+  background-color: rgba(209, 248, 169, 0.66);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+body {
+  position: relative;
+}
+
+.disclaim {
+  z-index: 3;
+  position: absolute;
+  background-color: rgb(114, 177, 51);
+  border-radius: 10px;
+  width: 650px;
+  height: 300px;
+  padding: 50px;
+  top: calc(50vh - 150px);
+  left: calc(50vw - 325px);
+}
+.disclaim__desc {
+  margin: 0;
+  font-size: 32px;
+  text-align: center;
+  color: white;
+}
+.disclaim__btn {
+  color: red;
+  font-weight: 500;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 3px;
 }/*# sourceMappingURL=style.css.map */
