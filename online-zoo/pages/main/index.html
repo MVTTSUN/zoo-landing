@@ -9,7 +9,12 @@
   <script defer src="index.js"></script>
   <title>Zoo</title>
 </head>
-<body class="width">
+<body>
+  <div id="blur" class="blur"></div>
+  <div id="disc" class="disclaim">
+    <button id="btn" class="btn disclaim__btn">X</button>
+    <p class="disclaim__desc">Извините, не успел к 4 октября. Кто проверяет, напишите пожалуйста в discord mvttsun. Я либо вечером, либо днем на следующий день кину и можно будет проверить)))</p>
+  </div>
   <header class="header">
     <div class="header__color-black">
       <div class="header__navbar container">
@@ -42,12 +47,16 @@
     <div class="header__visit-card">
       <div class="header__back-image">
         <div class="header__visit-card__circle"></div>
-        <h1 class="header__heading">
+        <h2 class="header__heading">
           Watch your <span class="yellow-text">favorite</span> animal online
-        </h1>
+        </h2>
         <button class="btn header__visit-card__btn">wath online</button>
       </div>
-      <img src="../../assets/images/Giant Panda.png" alt="Giant Panda" class="header__visit-card__img">
+      <picture>
+        <source class="header__visit-card__img" srcset="assets/images/Giant Panda.png" type="image/png">
+        <source class="header__visit-card__img" srcset="assets/images/Giant-Panda-1000.png" type="image/png" media="(max-width: 1100px)">
+        <img src="../../assets/images/Giant Panda.png" alt="Giant Panda" class="header__visit-card__img">
+      </picture>
     </div>
   </header>
 
@@ -57,7 +66,11 @@
       <span class="info__back-2"></span>
       <span class="info__back-3"></span>
       <div class="info container">
-        <img src="../../assets/images/bamboo-cap.png" alt="bamboo-cap" class="info__img">
+        <picture class="info__img info__picture">
+          <source srcset="assets/images/bamboo-cap.png" type="image/png">
+          <source srcset="assets/images/bamboo-cap-1000.png" type="image/png" media="(max-width: 1000px)">
+          <img src="../../assets/images/bamboo-cap.png" alt="bamboo-cap" class="info__img">
+        </picture>
         <div class="info__description-box">
           <h2 class="info__heading">
             The Backstage of the Wilderness World.
@@ -192,7 +205,7 @@
           During a time when the COVID-19 epidemic is touching all of our lives, we’re proud and glad that people around the world find joy in PetStory.
         </p>
         <p class="pay-help__desc3">
-          Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider<br> a gift to our <a href="https://rolling-scopes-school.github.io/mvttsun-JSFE2022Q3/online-zoo/pages/donat/" class="pay-help__underline">Emergency Support Fund</a> . 
+          Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our <a href="https://rolling-scopes-school.github.io/mvttsun-JSFE2022Q3/online-zoo/pages/donat/" class="pay-help__underline">Emergency Support Fund</a> . 
         </p>
         <strong class="pay-help__strong">
           How it works
