@@ -89,7 +89,7 @@ body {
   border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
-.header__logo h1 {
+.header__logo p {
   margin: 0;
   font-weight: 400;
   font-size: 19.0145px;
@@ -98,13 +98,13 @@ body {
   color: #FFFFFF;
   transform: translateY(2px);
 }
-.header__logo h1:hover {
+.header__logo p:hover {
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
 }
-.header__logo h1:active {
+.header__logo p:active {
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   -webkit-background-clip: text;
           background-clip: text;
