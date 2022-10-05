@@ -37,10 +37,15 @@
           </ul>
         </nav>
         <a href="https://www.figma.com/" class="header__info-design">Designed by ©</a>
+        <span class="header__burger"></span>
       </div>
     </div>
     <div class="header__visit-card">
-      <img src="../../assets/images/panda_bg-donut.png" alt="Giant Panda" class="header__visit-card__img">
+      <picture>
+        <source class="header__visit-card__img" srcset="../../assets/images/panda_bg-640.png" type="image/png" media="(max-width: 640px)">
+        <source class="header__visit-card__img" srcset="../../assets/images/panda_bg-1000.png" type="image/png" media="(max-width: 1000px)">
+        <img src="../../assets/images/panda_bg-donut.png" alt="Giant Panda" class="header__visit-card__img">
+      </picture>
     </div>
   </header>
 

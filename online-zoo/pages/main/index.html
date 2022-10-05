@@ -10,11 +10,6 @@
   <title>Zoo</title>
 </head>
 <body>
-  <div id="blur" class="blur"></div>
-  <div id="disc" class="disclaim">
-    <button id="btn" class="btn disclaim__btn">X</button>
-    <p class="disclaim__desc">Извините, не успел к 4 октября. Кто проверяет, напишите пожалуйста в discord mvttsun. Я либо вечером, либо днем на следующий день кину и можно будет проверить)))</p>
-  </div>
   <header class="header">
     <div class="header__color-black">
       <div class="header__navbar container">
@@ -42,6 +37,7 @@
           </ul>
         </nav>
         <a href="https://www.figma.com/" class="header__info-design">Designed by ©</a>
+        <span class="header__burger"></span>
       </div>
     </div>
     <div class="header__visit-card">
@@ -53,9 +49,10 @@
         <button class="btn header__visit-card__btn">wath online</button>
       </div>
       <picture>
-        <source class="header__visit-card__img" srcset="assets/images/Giant Panda.png" type="image/png">
+        <source class="header__visit-card__img" srcset="assets/images/Giant-Panda-320.png" type="image/png" media="(max-width: 320px)">
+        <source class="header__visit-card__img" srcset="assets/images/Giant-Panda-640.png" type="image/png" media="(max-width: 850px)">
         <source class="header__visit-card__img" srcset="assets/images/Giant-Panda-1000.png" type="image/png" media="(max-width: 1100px)">
-        <img src="../../assets/images/Giant Panda.png" alt="Giant Panda" class="header__visit-card__img">
+        <img src="../../assets/images/Giant-Panda.png" alt="Giant Panda" class="header__visit-card__img">
       </picture>
     </div>
   </header>
@@ -133,7 +130,10 @@
                   Native to South America
                 </p>
               </div>
-              <img src="../../assets/images/meet-fish_icon.svg" alt="meet-fish" class="grid-cards__img"></img>
+              <picture>
+                <source class="grid-cards__img" srcset="assets/images/meet-fish_icon-640.svg" type="image/png" media="(max-width: 642px)">
+                <img src="../../assets/images/meet-fish_icon.svg" alt="meet-fish" class="grid-cards__img"></img>
+              </picture>
             </div>
           </li><li class="grid-cards__li">
             <img src="../../assets/images/img-card3.png" alt="Gorillas" class="grid-cards__img-main">
@@ -146,7 +146,10 @@
                   Native to Congo
                 </p>
               </div>
-              <img src="../../assets/images/banana-bamboo_icon.svg" alt="banana-bamboo" class="grid-cards__img"></img>
+              <picture>
+                <source class="grid-cards__img" srcset="assets/images/banana-bamboo_icon-640.svg" type="image/png" media="(max-width: 642px)">
+                <img src="../../assets/images/banana-bamboo_icon.svg" alt="banana-bamboo" class="grid-cards__img"></img>
+              </picture>
             </div>
           </li><li class="grid-cards__li">
             <img src="../../assets/images/img-card4.png" alt="Two-toed Sloth" class="grid-cards__img-main">
@@ -172,7 +175,10 @@
                   Native to Africa
                 </p>
               </div>
-              <img src="../../assets/images/meet-fish_icon.svg" alt="meet-fish" class="grid-cards__img"></img>
+              <picture>
+                <source class="grid-cards__img" srcset="assets/images/meet-fish_icon-640.svg" type="image/png" media="(max-width: 642px)">
+                <img src="../../assets/images/meet-fish_icon.svg" alt="meet-fish" class="grid-cards__img"></img>
+              </picture>
             </div>
           </li><li class="grid-cards__li">
             <img src="../../assets/images/img-card6.png" alt="Penguins" class="grid-cards__img-main">
@@ -185,7 +191,10 @@
                   Native to Antarctica
                 </p>
               </div>
-              <img src="../../assets/images/meet-fish_icon.svg" alt="meet-fish" class="grid-cards__img"></img>
+              <picture>
+                <source class="grid-cards__img" srcset="assets/images/meet-fish_icon-640.svg" type="image/png" media="(max-width: 642px)">
+                <img src="../../assets/images/meet-fish_icon.svg" alt="meet-fish" class="grid-cards__img"></img>
+              </picture>
             </div>
           </li>
         </ul>
@@ -217,7 +226,7 @@
               Pay with card
             </p>
           </li>
-          <li class="pay-help__li">
+          <li class="pay-help__li pay-help__arrow-1">
             <img src="../../assets/images/Vector.svg" alt="arrow" class="pay-help__img-arrow">
           </li>
           <li class="pay-help__li">
@@ -226,7 +235,7 @@
               Payment goes to the zoo
             </p>
           </li>
-          <li class="pay-help__li">
+          <li class="pay-help__li pay-help__arrow-2">
             <img src="../../assets/images/Vector.svg" alt="arrow" class="pay-help__img-arrow">
           </li>
           <li class="pay-help__li">
@@ -332,7 +341,7 @@
   <footer class="footer">
     <div class="container">
       <a href="https://rolling-scopes-school.github.io/mvttsun-JSFE2022Q3/online-zoo/pages/main/" class="footer__logo">
-        <span class="header__logo_span"></span>
+        <span class="footer__logo_span"></span>
         <p>PetStory online</p>
       </a>
       <div class="footer__top-right">
