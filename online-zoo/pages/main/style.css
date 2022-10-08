@@ -64,6 +64,80 @@ body {
   margin: 0 220px;
 }
 
+.burger-menu {
+  position: absolute;
+  background-color: #FFF;
+  z-index: 3;
+  width: 100%;
+  height: 329px;
+  padding: 10px;
+  transform: translateY(-350px);
+  transition: transform 0.3s ease-out;
+}
+.burger-menu__logo {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+  width: 65.6px;
+  height: 41.6px;
+  border: 0.8px solid #FE9013;
+  border-radius: 2px;
+}
+.burger-menu__logo_span {
+  content: url("../../assets/images/bamboo-burger.svg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 7px 9px;
+}
+.burger-menu__logo p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 15.2116px;
+  line-height: 120%;
+  text-align: center;
+  color: #FE9013;
+}
+.burger-menu__nav-li {
+  margin-bottom: 15px;
+}
+.burger-menu__nav-a, .burger-menu__info-design {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+}
+.burger-menu__nav-a:active, .burger-menu__info-design:active {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.burger-menu__nav-a:hover, .burger-menu__info-design:hover {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.burger-menu-active {
+  transform: translateY(0);
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 57, 57, 0.5);
+  transition: background-color 0.3s ease-out;
+}
+
+.blur {
+  filter: blur(2px);
+  transition: filter 0.3 ease-out;
+}
+
 .header {
   position: relative;
   max-height: 780px;
@@ -974,6 +1048,9 @@ body {
   .header {
     margin-bottom: 100px;
   }
+  .header__nav-li:not(:last-child) {
+    margin-right: 48px;
+  }
   .main-info {
     padding-bottom: 140px;
   }
@@ -1174,6 +1251,23 @@ body {
   }
 }
 @media (max-width: 642px) {
+  .grid-cards__arrow-left {
+    transform: translateX(-45px);
+  }
+  .grid-cards__arrow-right {
+    transform: translateX(45px);
+  }
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 18px;
+    right: 34px;
+    left: 15px;
+    bottom: 15px;
+    border-radius: 20px;
+    background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74), rgba(243, 169, 248, 0.66), rgb(224, 216, 240), rgb(234, 247, 254), rgb(234, 247, 254));
+  }
   .container {
     margin-right: 20px;
     margin-left: 20px;
@@ -1181,6 +1275,10 @@ body {
   .header {
     height: 373px;
     margin-bottom: 60px;
+  }
+  .header__color-black {
+    position: fixed;
+    width: 100%;
   }
   .header__visit-card__img {
     height: auto;
@@ -1315,6 +1413,7 @@ body {
   }
   .testimonials__li {
     margin-bottom: 0;
+    cursor: pointer;
   }
   .testimonials__btn {
     width: 240px;

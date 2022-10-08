@@ -65,7 +65,82 @@ body {
   margin: 0 220px;
 }
 
+.burger-menu {
+  position: absolute;
+  background-color: #FFF;
+  z-index: 3;
+  width: 100%;
+  height: 329px;
+  padding: 10px;
+  transform: translateY(-350px);
+  transition: transform 0.3s ease-out;
+}
+.burger-menu__logo {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+  width: 65.6px;
+  height: 41.6px;
+  border: 0.8px solid #FE9013;
+  border-radius: 2px;
+}
+.burger-menu__logo_span {
+  content: url("../../assets/images/bamboo-burger.svg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 7px 9px;
+}
+.burger-menu__logo p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 15.2116px;
+  line-height: 120%;
+  text-align: center;
+  color: #FE9013;
+}
+.burger-menu__nav-li {
+  margin-bottom: 15px;
+}
+.burger-menu__nav-a, .burger-menu__info-design {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+}
+.burger-menu__nav-a:active, .burger-menu__info-design:active {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.burger-menu__nav-a:hover, .burger-menu__info-design:hover {
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.burger-menu-active {
+  transform: translateY(0);
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 57, 57, 0.5);
+  transition: background-color 0.3s ease-out;
+}
+
+.blur {
+  filter: blur(2px);
+  transition: filter 0.3 ease-out;
+}
+
 .header {
+  position: relative;
   overflow: hidden;
 }
 .header__color-black {
@@ -278,6 +353,14 @@ body {
   background: #FFEE2E;
   border-radius: 50%;
 }
+.donate__circle-active::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/images/roller_icon.svg") no-repeat;
+  transform: translate(-15px, -15px);
+}
 .donate__price {
   margin: 0;
   font-weight: 500;
@@ -304,6 +387,9 @@ body {
   height: 20px;
   background: url("../../assets/images/dollar.svg");
 }
+.donate__dollar-active {
+  background: url("../../assets/images/dolar-orange.svg") no-repeat;
+}
 .donate__grid-price {
   margin-bottom: 98px;
   display: grid;
@@ -328,7 +414,7 @@ body {
   margin: auto;
 }
 .donate__grid-price-el:hover p {
-  color: #FE9013;
+  color: #FE9013 !important;
 }
 .donate__grid-price-el:hover .donate__dollar {
   background: url("../../assets/images/dolar-orange.svg") no-repeat;
@@ -810,6 +896,9 @@ input[type=number] {
     margin-right: 30px;
     margin-left: 30px;
   }
+  .header__nav-li:not(:last-child) {
+    margin-right: 48px;
+  }
   .donate {
     padding-bottom: 30px;
   }
@@ -878,6 +967,10 @@ input[type=number] {
   .container {
     margin-right: 20px;
     margin-left: 20px;
+  }
+  .header__color-black {
+    position: fixed;
+    width: 100%;
   }
   .header__visit-card__img {
     height: auto;
@@ -1050,6 +1143,12 @@ input[type=number] {
     margin-top: 5px;
     margin-bottom: 10px;
   }
+  .donate__circle-active::before {
+    width: 20px;
+    height: 20px;
+    background: url("../../assets/images/roller_icon-320.svg") no-repeat;
+    transform: translate(-7.5px, -7.5px);
+  }
   .donate__price {
     font-size: 13px;
   }
@@ -1058,6 +1157,9 @@ input[type=number] {
     width: 5px;
     height: 10px;
     background: url(../../assets/images/dollar-320.svg);
+  }
+  .donate__dollar-active {
+    background: url("../../assets/images/dolar-orange-320.svg") no-repeat;
   }
   .footer {
     padding-top: 20px;
