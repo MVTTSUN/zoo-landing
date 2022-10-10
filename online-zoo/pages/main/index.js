@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if(document.documentElement.clientWidth <= 642) {
     comment.forEach(e => {
-      e.addEventListener('click', () => {
+      e.addEventListener('click', target => {
         e.append(div);
         div.append(exit);
         div.append(divDesc);
@@ -56,7 +56,153 @@ document.addEventListener('DOMContentLoaded', () => {
         divAvatar.setAttribute('src', e.children[0].children[0].getAttribute('src'))
         divName.textContent = e.children[0].children[1].children[0].textContent;
         divLocal.textContent = e.children[0].children[1].children[1].textContent;
+        if(target.target === exit || target.target === div) {
+          div.remove();
+        }
       });
     });
   }
+
+  const next = document.querySelector('.grid-cards__arrow-right');
+  const prev = document.querySelector('.grid-cards__arrow-left');
+
+  let objectPets = {
+    1: {
+      image: {
+        src: '../../assets/images/img-card1.png',
+        alt: 'giant Panda'
+      },
+      name: 'giant Pandas',
+      local: 'Native to Southwest China',
+      icon: {
+        src: '../../assets/images/banana-bamboo_icon.svg',
+        alt: 'banana-bamboo'
+      },
+      iconSmall: 'assets/images/banana-bamboo_icon-640.svg'
+    },
+    2: {
+      image: {
+        src: '../../assets/images/img-card2.png',
+        alt: 'Eagles'
+      },
+      name: 'Eagles',
+      local: 'Native to South America',
+      icon: {
+        src: '../../assets/images/meet-fish_icon.svg',
+        alt: 'meet-fish'
+      },
+      iconSmall: 'assets/images/meet-fish_icon-640.svg'
+    },
+    3: {
+      image: {
+        src: '../../assets/images/img-card3.png',
+        alt: 'Gorillas'
+      },
+      name: 'Gorillas',
+      local: 'Native to Congo',
+      icon: {
+        src: '../../assets/images/banana-bamboo_icon.svg',
+        alt: 'banana-bamboo'
+      },
+      iconSmall: 'assets/images/banana-bamboo_icon-640.svg'
+    },
+    4: {
+      image: {
+        src: '../../assets/images/img-card4.png',
+        alt: 'Two-toed Sloth'
+      },
+      name: 'Two-toed Sloth',
+      local: 'Mesoamerica, South America',
+      icon: {
+        src: '../../assets/images/banana-bamboo_icon.svg',
+        alt: 'banana-bamboo'
+      },
+      iconSmall: 'assets/images/banana-bamboo_icon-640.svg'
+    },
+    5: {
+      image: {
+        src: '../../assets/images/img-card5.png',
+        alt: 'cheetahs'
+      },
+      name: 'cheetahs',
+      local: 'Native to Africa',
+      icon: {
+        src: '../../assets/images/meet-fish_icon.svg',
+        alt: 'meet-fish'
+      },
+      iconSmall: 'assets/images/meet-fish_icon-640.svg'
+    },
+    6: {
+      image: {
+        src: '../../assets/images/img-card6.png',
+        alt: 'Penguins'
+      },
+      name: 'Penguins',
+      local: 'Native to Antarctica',
+      icon: {
+        src: '../../assets/images/meet-fish_icon.svg',
+        alt: 'meet-fish'
+      },
+      iconSmall: 'assets/images/meet-fish_icon-640.svg'
+    }
+  }
+
+  function random(min, max) {
+    let arr = []
+    while(arr.length !== max) {
+      let cnt = 0;
+      let number = Math.floor(Math.random() * ((max + 1) - min)) + min;
+      for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === number) cnt++;
+      }
+      if(cnt === 0) {
+        arr.push(number);
+      }
+    }
+    return arr;
+  }
+
+  next.addEventListener('click', () => {
+    const petCards = document.querySelectorAll('.grid-cards__li');
+    const container = document.querySelector('.grid-cards__ul');
+    let cnt = 0;
+
+    petCards.forEach(e => e.style.transform = 'translateX(-300px)');
+
+    if(window.innerWidth <= 950) {
+      cnt = 4;
+    } else cnt = 6;
+
+    setTimeout(() => {
+      for(let i = 0; i < cnt; i++) {
+        container.children[8].remove();
+      }
+    }, 2000)
+
+    for(let i = 0; i < petCards.length; i++) {
+      if(getComputedStyle(petCards[i]).display === 'list-item') {
+        container.appendChild(petCards[i].cloneNode(true));
+      }
+    }
+
+    console.log(petCards)
+
+    let rand = random(1, cnt);
+
+    for(let i = 0; i < cnt; i++) {
+      if(getComputedStyle(petCards[i]).display === 'list-item') {
+        petCards[i].style.transform = 'translateX(10000px)';
+        petCards[i].children[0].setAttribute('style', 'background: #000');
+        petCards[i].children[0].setAttribute('src', objectPets[rand[i]].image.src);
+        petCards[i].children[0].setAttribute('alt', objectPets[rand[i]].image.alt);
+        petCards[i].children[1].children[0].children[0].textContent = objectPets[rand[i]].name;
+        petCards[i].children[1].children[0].children[1].textContent = objectPets[rand[i]].local;
+        petCards[i].children[1].children[1].children[0].setAttribute('srcset', objectPets[rand[i]].iconSmall);
+        petCards[i].children[1].children[1].children[1].setAttribute('src', objectPets[rand[i]].icon.src);
+        petCards[i].children[1].children[1].children[1].setAttribute('alt', objectPets[rand[i]].icon.alt);
+      }
+    }
+
+    container.style.gridTemplateColumns = 'repeat(6, minmax(210px, 1fr))';
+  });
 });
