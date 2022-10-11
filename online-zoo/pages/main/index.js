@@ -266,11 +266,12 @@ function rangeThumb() {
 
 testimonials.addEventListener('wheel', e => {
   e.preventDefault()
-  if(e.deltaY === 100 && range.value < 8) {
+  console.log(e.deltaY)
+  if(e.deltaY === 100 && range.value < 8 || e.deltaY === 108 && range.value < 8) {
     range.value++;
     testimonials.style.transition = 'transform 0.3s ease-out';
     testimonials.style.transform = `translateX(-${wid*range.value}px)`;
-  } else if(e.deltaY === -100 && range.value >= 0) {
+  } else if(e.deltaY === -100 && range.value >= 0 || e.deltaY === -108 && range.value >= 0) {
     range.value--;
     testimonials.style.transition = 'transform 0.3s ease-out';
     testimonials.style.transform = `translateX(-${wid*range.value}px)`;
