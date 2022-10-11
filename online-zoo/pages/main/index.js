@@ -254,3 +254,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+const testimonials = document.getElementById('testUl');
+const range = document.querySelector('.testimonials__range');
+let wid = testimonials.offsetWidth / 4;
+
+function rangeThumb() {
+  testimonials.style.transition = 'transform 0.3s ease-out';
+  testimonials.style.transform = `translateX(-${wid*range.value}px)`;
+}
+
+testimonials.addEventListener('wheel', e => {
+  e.preventDefault()
+  if(e.deltaY === 100 && range.value < 8) {
+    range.value++;
+    testimonials.style.transition = 'transform 0.3s ease-out';
+    testimonials.style.transform = `translateX(-${wid*range.value}px)`;
+  } else if(e.deltaY === -100 && range.value >= 0) {
+    range.value--;
+    testimonials.style.transition = 'transform 0.3s ease-out';
+    testimonials.style.transform = `translateX(-${wid*range.value}px)`;
+  }
+});
