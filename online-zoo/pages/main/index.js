@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function random(min, max) {
+  function random(min, max, len) {
     let arr = []
-    while(arr.length !== max) {
+    while(arr.length !== len) {
       let cnt = 0;
       let number = Math.floor(Math.random() * ((max + 1) - min)) + min;
       for(let i = 0; i < arr.length; i++) {
@@ -164,45 +164,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
   next.addEventListener('click', () => {
     const petCards = document.querySelectorAll('.grid-cards__li');
-    const container = document.querySelector('.grid-cards__ul');
+    const static = document.querySelector('.grid-cards__static');
     let cnt = 0;
+    next.style.pointerEvents = 'none';
 
-    petCards.forEach(e => e.style.transform = 'translateX(-300px)');
+    static.style.display = 'flex';
+    static.style.flexDirection = 'row-reverse';
+    static.style.overflow = 'hidden';
+    static.style.width = '200%';
+    static.style.transform = 'translateX(-50%)';
+    static.style.transition = 'transform 0.3s ease-out';
 
     if(window.innerWidth <= 950) {
       cnt = 4;
     } else cnt = 6;
 
     setTimeout(() => {
-      for(let i = 0; i < cnt; i++) {
-        container.children[8].remove();
-      }
-    }, 2000)
+      static.children[1].remove();
+      static.style.transition = 'transform 0s';
+      static.style.transform = 'translateX(0)';
+      static.style.width = '100%';
+      next.style.pointerEvents = 'auto';
+    }, 300)
 
-    for(let i = 0; i < petCards.length; i++) {
+    static.appendChild(static.children[0].cloneNode(true));
+
+    let rand = random(1, 6, cnt);
+    let redLine = 0;
+
+    for(let i = 0; i < 6; i++) {
       if(getComputedStyle(petCards[i]).display === 'list-item') {
-        container.appendChild(petCards[i].cloneNode(true));
-      }
-    }
-
-    console.log(petCards)
-
-    let rand = random(1, cnt);
-
-    for(let i = 0; i < cnt; i++) {
-      if(getComputedStyle(petCards[i]).display === 'list-item') {
-        petCards[i].style.transform = 'translateX(10000px)';
         petCards[i].children[0].setAttribute('style', 'background: #000');
-        petCards[i].children[0].setAttribute('src', objectPets[rand[i]].image.src);
-        petCards[i].children[0].setAttribute('alt', objectPets[rand[i]].image.alt);
-        petCards[i].children[1].children[0].children[0].textContent = objectPets[rand[i]].name;
-        petCards[i].children[1].children[0].children[1].textContent = objectPets[rand[i]].local;
-        petCards[i].children[1].children[1].children[0].setAttribute('srcset', objectPets[rand[i]].iconSmall);
-        petCards[i].children[1].children[1].children[1].setAttribute('src', objectPets[rand[i]].icon.src);
-        petCards[i].children[1].children[1].children[1].setAttribute('alt', objectPets[rand[i]].icon.alt);
+        petCards[i].children[0].setAttribute('src', objectPets[rand[redLine]].image.src);
+        petCards[i].children[0].setAttribute('alt', objectPets[rand[redLine]].image.alt);
+        petCards[i].children[1].children[0].children[0].textContent = objectPets[rand[redLine]].name;
+        petCards[i].children[1].children[0].children[1].textContent = objectPets[rand[redLine]].local;
+        petCards[i].children[1].children[1].children[0].setAttribute('srcset', objectPets[rand[redLine]].iconSmall);
+        petCards[i].children[1].children[1].children[1].setAttribute('src', objectPets[rand[redLine]].icon.src);
+        petCards[i].children[1].children[1].children[1].setAttribute('alt', objectPets[rand[redLine]].icon.alt);
+        redLine++;
       }
     }
+  });
 
-    container.style.gridTemplateColumns = 'repeat(6, minmax(210px, 1fr))';
+  prev.addEventListener('click', () => {
+    const petCards = document.querySelectorAll('.grid-cards__li');
+    const static = document.querySelector('.grid-cards__static');
+    let cnt = 0;
+    prev.style.pointerEvents = 'none';
+
+    static.style.display = 'flex';
+    static.style.flexDirection = 'row-reverse';
+    static.style.overflow = 'hidden';
+    static.style.width = '200%';
+    static.style.transform = 'translateX(-50%)';
+    static.style.transition = 'transform 0s';
+
+    if(window.innerWidth <= 950) {
+      cnt = 4;
+    } else cnt = 6;
+
+    setTimeout(() => {
+      static.style.transition = 'transform 0.3s ease-out';
+      static.style.transform = 'translateX(0)';
+      prev.style.pointerEvents = 'auto';
+      setTimeout(() => {
+        static.style.width = '100%';
+        static.children[0].remove();
+      }, 299)
+    }, 1)
+
+    static.insertBefore(static.children[0].cloneNode(true), static.firstChild);
+
+    let rand = random(1, 6, cnt);
+    let redLine = 0;
+
+    for(let i = 0; i < 6; i++) {
+      if(getComputedStyle(petCards[i]).display === 'list-item') {
+        petCards[i].children[0].setAttribute('style', 'background: #000');
+        petCards[i].children[0].setAttribute('src', objectPets[rand[redLine]].image.src);
+        petCards[i].children[0].setAttribute('alt', objectPets[rand[redLine]].image.alt);
+        petCards[i].children[1].children[0].children[0].textContent = objectPets[rand[redLine]].name;
+        petCards[i].children[1].children[0].children[1].textContent = objectPets[rand[redLine]].local;
+        petCards[i].children[1].children[1].children[0].setAttribute('srcset', objectPets[rand[redLine]].iconSmall);
+        petCards[i].children[1].children[1].children[1].setAttribute('src', objectPets[rand[redLine]].icon.src);
+        petCards[i].children[1].children[1].children[1].setAttribute('alt', objectPets[rand[redLine]].icon.alt);
+        redLine++;
+      }
+    }
   });
 });

@@ -66,7 +66,7 @@ body {
 }
 
 .burger-menu {
-  position: absolute;
+  position: fixed;
   background-color: #FFF;
   z-index: 3;
   width: 100%;
@@ -144,6 +144,8 @@ body {
   overflow: hidden;
 }
 .header__color-black {
+  position: fixed;
+  width: 100%;
   background-color: #000;
   z-index: 1;
 }
@@ -967,10 +969,6 @@ input[type=number] {
   .container {
     margin-right: 20px;
     margin-left: 20px;
-  }
-  .header__color-black {
-    position: fixed;
-    width: 100%;
   }
   .header__visit-card__img {
     height: auto;

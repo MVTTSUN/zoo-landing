@@ -65,7 +65,7 @@ body {
 }
 
 .burger-menu {
-  position: absolute;
+  position: fixed;
   background-color: #FFF;
   z-index: 3;
   width: 100%;
@@ -144,7 +144,8 @@ body {
   margin-bottom: 140px;
 }
 .header__color-black {
-  position: relative;
+  position: fixed;
+  width: 100%;
   background-color: #000;
   z-index: 1;
 }
@@ -316,29 +317,6 @@ body {
   width: 368px;
   height: 275px;
 }
-.main-info .grid-cards__btn {
-  padding: 16px 0;
-  display: block;
-  margin: 0 auto;
-  width: 298px;
-  background: #FE9013;
-  border-radius: 25px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
-.main-info .grid-cards__btn:hover {
-  background: #E47209;
-}
-.main-info .grid-cards__btn:active {
-  background: #4B9200;
-}
-.main-info .grid-cards__btn:disabled {
-  background: #767474;
-}
 
 .info {
   max-height: 403px;
@@ -386,15 +364,42 @@ body {
   color: #333B41;
 }
 
+.grid-cards__btn {
+  padding: 16px 0;
+  display: block;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 298px;
+  background: #FE9013;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.grid-cards__btn:hover {
+  background: #E47209;
+}
+.grid-cards__btn:active {
+  background: #4B9200;
+}
+.grid-cards__btn:disabled {
+  background: #767474;
+}
+.grid-cards__pets {
+  position: relative;
+}
 .grid-cards__ul {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(210px, 1fr));
   gap: 20px 30px;
-  margin-bottom: 80px;
   justify-items: center;
 }
 .grid-cards__arrow-left {
+  z-index: 10;
   cursor: pointer;
   position: absolute;
   left: -82px;
@@ -404,6 +409,7 @@ body {
   fill: #4B9200;
 }
 .grid-cards__arrow-right {
+  z-index: 10;
   cursor: pointer;
   position: absolute;
   right: -82px;
@@ -988,12 +994,10 @@ body {
     gap: 92px 30px;
   }
   .grid-cards__arrow-right {
-    right: auto;
-    transform: translateX(101px);
+    right: calc((50% - 31px) / 1.35);
   }
   .grid-cards__arrow-left {
-    left: auto;
-    transform: translateX(-101px);
+    left: calc((50% - 31px) / 1.35);
   }
   .testimonials__avatar {
     width: 37px;
@@ -1355,9 +1359,6 @@ body {
   .info__strong-heading {
     margin-bottom: 20px;
   }
-  .grid-cards__ul {
-    margin-bottom: 60px;
-  }
   .grid-cards__li {
     max-width: 285px;
     max-height: 332px;
@@ -1378,6 +1379,7 @@ body {
   .grid-cards__btn {
     position: relative;
     z-index: 3;
+    margin-top: 60px;
   }
   .pay-help {
     padding-top: 20px;
