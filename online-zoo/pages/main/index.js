@@ -266,7 +266,6 @@ function rangeThumb() {
 
 testimonials.addEventListener('wheel', e => {
   e.preventDefault()
-  console.log(e.deltaY)
   if(e.deltaY > 0 && range.value < 8) {
     range.value++;
     testimonials.style.transition = 'transform 0.3s ease-out';

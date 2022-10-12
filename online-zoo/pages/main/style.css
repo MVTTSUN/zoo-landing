@@ -591,6 +591,7 @@ body {
 .testimonials {
   position: relative;
   padding: 140px 0 180px;
+  overflow-x: hidden;
   /* All the same stuff for Firefox */
 }
 .testimonials__heading {
@@ -1559,6 +1560,9 @@ body {
     grid-template-rows: repeat(4, minmax(110px, 1fr));
     max-width: 285px;
     margin-bottom: 20px;
+  }
+  .pay-help {
+    overflow: hidden;
   }
   .pay-help__box {
     padding: 20px 0 40px;
