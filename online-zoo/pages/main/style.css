@@ -290,6 +290,10 @@ body {
   background: #767474;
 }
 
+.over {
+  overflow: hidden;
+}
+
 .main-info {
   position: relative;
   padding-bottom: 100px;
@@ -603,10 +607,11 @@ body {
   color: #333B41;
 }
 .testimonials__ul {
+  margin-left: 2px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: column;
-  gap: 0 30px;
+  gap: 28px;
   justify-items: center;
 }
 .testimonials__li {
@@ -1252,6 +1257,9 @@ body {
   .testimonials__btn {
     display: block;
     margin: 0 auto;
+  }
+  .over {
+    overflow: visible;
   }
   .footer__top-right {
     display: none;

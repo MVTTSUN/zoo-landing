@@ -227,8 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       static.style.transition = 'transform 0.3s ease-out';
       static.style.transform = 'translateX(0)';
-      prev.style.pointerEvents = 'auto';
       setTimeout(() => {
+        prev.style.pointerEvents = 'auto';
         static.style.width = '100%';
         static.children[0].remove();
       }, 299)
@@ -257,7 +257,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const testimonials = document.getElementById('testUl');
 const range = document.querySelector('.testimonials__range');
-let wid = testimonials.offsetWidth / 4;
+const item = document.querySelector('.testimonials__li');
+const gap = getComputedStyle(testimonials).gap.slice(0, 2);
+let wid = item.offsetWidth + parseInt(gap) + 0.2;
 
 function rangeThumb() {
   testimonials.style.transition = 'transform 0.3s ease-out';
